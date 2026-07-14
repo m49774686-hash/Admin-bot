@@ -8,3 +8,13 @@ const bot = new TelegramBot(
     polling: true
   }
 );
+const http = require("http");
+
+const PORT = process.env.PORT || 10000;
+
+http.createServer((req, res) => {
+  res.writeHead(200);
+  res.end("Admin Bot Running");
+}).listen(PORT, () => {
+  console.log("🌐 Server running on " + PORT);
+});
